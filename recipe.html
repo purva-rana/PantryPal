@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Storer</title>
+    <script src="recipe.js"></script>
+    <link rel="stylesheet" href="recipe.css">
+    
+</head>
+<body>
+
+    <div class="sidenav">
+        <a href="#">Home</a>
+        <a href="#">Pantry Inventory</a>
+        <a href="#">Medicine Inventory</a>
+        <a href="#">Budget Tracker</a>
+        <a href="groceryList.html">Grocery List</a>
+    </div>
+    
+    <h1 align = "center">Recipe Manager</h1>
+    <hr> <br>
+
+    <div id="recipe-form">
+        <h2>Add a Recipe</h2>
+        <br>
+        <label for="recipeName">Recipe Name:</label>
+        <textarea id="recipeName" rows="1" required></textarea>
+        <br>
+        <br>
+        <label for="ingredients">Ingredients :  </label>
+        <textarea id="ingredients" rows="1" required></textarea>
+        <br>
+        <br>
+        <label for="instructions">Instructions :  </label>
+        <textarea id="instructions" rows="4" required></textarea>
+        <br>
+        <button class="button-9" onclick="addRecipe()">
+            Add Recipe
+        </button>
+    </div>
+
+    <div id="recipe-list">
+        <h2>Recipes</h2>
+        <div id="recipes"></div>
+    </div>
+
+</body>
+</html>
