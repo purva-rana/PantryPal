@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="grocery.js"></script>
+    <link rel="stylesheet" href="grocery.css">
+    <title>Grocery List</title>
+</head>
+<body>
+
+    <div class="sidenav">
+        <a href="#">Home</a>
+        <a href="#">Inventory</a>
+        <a href="#">Budget Tracker</a>
+        <a href="index.html">Recipe Storer</a>
+    </div>
+
+    <h1 align = "center">Grocery List</h1>
+    <hr> <br><br>
+    
+    <br><br>
+
+    <form>
+        <label for="itemName"></label>
+        <input type="text" name="itemName" id="itemName" placeholder="Name">
+        <label for="itemQuantity"></label>
+        <input type="text" name="itemQuantity" id="itemQuantity" placeholder="Quantity">
+        <label for="itemPrice"></label>
+        <input type="text" name="itemPrice" id="itemPrice" placeholder="Price">
+    </form>
+    
+    <button class="button-9" onclick="addRow()">
+        Add item
+    </button>
+
+    <table class="center styled-table" id = "groceryTable">
+        <tr>
+            <th width = "50px"> <button class = "headerButtons" onclick="sortTable_String('groceryTable', 0)">S.No.</button></th>
+            <th width = "150px"><button class = "headerButtons" onclick="sortTable_String('groceryTable', 1)">Name</button></th>
+            <th width = "75px"> <button class = "headerButtons" onclick="sortTable_Numbers('groceryTable', 2)">Quantity</button></th>
+            <th width = "100px"><button class = "headerButtons" onclick="sortTable_Numbers('groceryTable', 3)">Price</button></th>
+            <th width = "25px"> <button class = "headerButtons"></button>
+        </tr>
+      
+    </table>
+
+    
+</body>
+</html>
