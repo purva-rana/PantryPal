@@ -21,48 +21,30 @@
     
     <br><br>
 
-    <table class="center" id = "groceryTable">
+    <form>
+        <label for="itemName"></label>
+        <input type="text" name="itemName" id="itemName" placeholder="Name">
+        <label for="itemQuantity"></label>
+        <input type="text" name="itemQuantity" id="itemQuantity" placeholder="Quantity">
+        <label for="itemPrice"></label>
+        <input type="text" name="itemPrice" id="itemPrice" placeholder="Price">
+    </form>
+    
+    <button class="button-9" onclick="addRow()">
+        Add item
+    </button>
+
+    <table class="center styled-table" id = "groceryTable">
         <tr>
             <th width = "50px"> <button class = "headerButtons" onclick="sortTable_String('groceryTable', 0)">S.No.</button></th>
             <th width = "150px"><button class = "headerButtons" onclick="sortTable_String('groceryTable', 1)">Name</button></th>
             <th width = "75px"> <button class = "headerButtons" onclick="sortTable_Numbers('groceryTable', 2)">Quantity</button></th>
             <th width = "100px"><button class = "headerButtons" onclick="sortTable_Numbers('groceryTable', 3)">Price</button></th>
+            <th width = "25px"> <button class = "headerButtons"></button>
         </tr>
-        <tr>
-            <td>1</td>
-            <td>Eggs</td>
-            <td>6</td>
-            <td>50</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>Avacados</td>
-            <td>1</td>
-            <td>75</td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>Beans</td>
-            <td>500g</td>
-            <td>150</td>
-        </tr>
+      
     </table>
 
-<!-- <form id="myForm">
-    <label for="itemName">Item Name:</label>
-    <input type="text" id="itemName" name="itemName">
-    <label for="quantity">Quantity:</label>
-    <input type="text" id="quantity" name="quantity">
-    <label for="expiryDate">Expiry Date:</label>
-    <input type="text" id="expiryDate" name="expiryDate">
-    <button type="button" onclick="addItem()">Add Item</button>
-</form> -->
-    
-    <form>
-        
-    </form>
-      
-    
     
 </body>
 </html>

@@ -72,3 +72,53 @@ function determineItemType(itemName) {
     else
         return "More information needed to classify..."
 }
+
+// Add rows to table
+function addRow() {
+    var itemName = document.getElementById("itemName").value;
+    var itemQuantity = document.getElementById("itemQuantity").value;
+    var itemPrice = document.getElementById("itemPrice").value;
+
+    // Get the table
+    var table = document.getElementById("groceryTable");
+
+    // Create a new row
+    var newRow = table.insertRow(-1); // -1 appends the row at the last position
+
+    // Insert cells with input values
+    var cell1 = newRow.insertCell(0);
+    var cell2 = newRow.insertCell(1);
+    var cell3 = newRow.insertCell(2);
+    var cell4 = newRow.insertCell(3);
+    var cell5 = newRow.insertCell(4);
+
+    // Set cell values
+    cell1.innerHTML = table.rows.length - 1;
+    cell2.innerHTML = itemName;
+    cell3.innerHTML = itemQuantity;
+    cell4.innerHTML = itemPrice;
+
+    // Create a delete button and attach a click event
+    var deleteButton = document.createElement("button");
+    deleteButton.innerHTML = '<img src="images/trashCan.png" alt="Delete" class = "tiny-image">';
+    deleteButton.classList.add("transparent-btn");
+
+    deleteButton.onclick = function() {
+        deleteRow(newRow);
+    };
+
+    // Append the delete button to the Actions column
+    cell5.appendChild(deleteButton);
+
+    // Clear input fields
+    document.getElementById("itemName").value = "";
+    document.getElementById("itemQuantity").value = "";
+    document.getElementById("itemPrice").value = "";
+
+}
+
+function deleteRow(row) {
+    var table = document.getElementById("groceryTable");
+    var index = row.rowIndex;
+    table.deleteRow(index);
+}
