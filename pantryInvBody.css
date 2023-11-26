@@ -1,0 +1,57 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #ebf2ff !important;
+}
+
+.add__new__btn__mobile__only{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 15px 12px;
+    background-color: white;
+    width: 100%;
+    z-index: 3;
+}
+
+@media (min-width: 768px) {
+  .add__new__btn__mobile__only {
+    display: none;
+  }
+}
+
+/* Apply a consistent style to the entire table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  /* Style for table headers */
+  th {
+    background-color: #f2f2f2;
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  /* Style for alternating rows */
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  /* Style for table cells */
+  td {
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  /* Highlight on hover for table rows */
+  tr:hover {
+    background-color: #e0e0e0;
+  }
+  

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pantry Inventory</title>
+    <div class="sidenav">
+            <a href="#">Home</a>
+            <a href="#">Inventory</a>
+            <a href="#">Budget Tracker</a>
+            <a href="#">Recipe Storer</a>
+    </div>
+    <link rel="stylesheet" href="sideNav.css">
+    </head>
+<body>
+    <link rel="stylesheet" href="pantryInvBody.css">
+
+  <h2>Pantry Items</h2>
+
+  <table border="1" id="pantryTable">
+    <tr>
+        <th>Sr No.</th>
+        <th>Item name</th>
+        <th>Item type</th>
+        <th>Quantity</th>
+        <th>Expiry Date</th>
+        <th>Action</th>
+    </tr>
+  </table>
+  <form id="myForm" autocomplete="off">
+    <label for="itemName">Item Name:</label>
+    <input type="text" id="itemName" name="itemName">
+    <label for="quantity">Quantity:</label>
+    <input type="text" id="quantity" name="quantity">
+    <label for="expiryDate">Expiry Date:</label>
+    <input type="text" id="expiryDate" name="expiryDate">
+    <button type="button" onclick="addItem()">Add Item</button>
+  </form>
+
+    <script src="pantryInvJS.js"></script>
+
+</body>
+</html>
