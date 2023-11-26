@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="grocery.js"></script>
     <link rel="stylesheet" href="grocery.css">
     <title>Grocery List</title>
 </head>
@@ -12,27 +13,55 @@
         <a href="#">Home</a>
         <a href="#">Inventory</a>
         <a href="#">Budget Tracker</a>
-        <a href="#">Recipe Storer</a>
+        <a href="index.html">Recipe Storer</a>
     </div>
 
     <h1 align = "center">Grocery List</h1>
-    <hr>
+    <hr> <br><br>
+    
     <br><br>
 
-    <table>
+    <table class="center" id = "groceryTable">
         <tr>
-            <th>S. No.</th>
-            <th>Name</th>
-            <th>Quantity</th>
-            <th>Price</th>
+            <th width = "50px"> <button class = "headerButtons" onclick="sortTable_String('groceryTable', 0)">S.No.</button></th>
+            <th width = "150px"><button class = "headerButtons" onclick="sortTable_String('groceryTable', 1)">Name</button></th>
+            <th width = "75px"> <button class = "headerButtons" onclick="sortTable_Numbers('groceryTable', 2)">Quantity</button></th>
+            <th width = "100px"><button class = "headerButtons" onclick="sortTable_Numbers('groceryTable', 3)">Price</button></th>
         </tr>
         <tr>
             <td>1</td>
+            <td>Eggs</td>
+            <td>6</td>
+            <td>50</td>
+        </tr>
+        <tr>
             <td>2</td>
+            <td>Avacados</td>
+            <td>1</td>
+            <td>75</td>
+        </tr>
+        <tr>
             <td>3</td>
-            <td>4</td>
+            <td>Beans</td>
+            <td>500g</td>
+            <td>150</td>
         </tr>
     </table>
+
+<!-- <form id="myForm">
+    <label for="itemName">Item Name:</label>
+    <input type="text" id="itemName" name="itemName">
+    <label for="quantity">Quantity:</label>
+    <input type="text" id="quantity" name="quantity">
+    <label for="expiryDate">Expiry Date:</label>
+    <input type="text" id="expiryDate" name="expiryDate">
+    <button type="button" onclick="addItem()">Add Item</button>
+</form> -->
+    
+    <form>
+        
+    </form>
+      
     
     
 </body>
