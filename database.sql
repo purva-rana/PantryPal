@@ -22,21 +22,6 @@ CREATE TABLE PantryInventory (
     Expiry_Date Date
 );
 
-CREATE TABLE MedicineInventory (
-    SrNo int AUTO_INCREMENT PRIMARY KEY,
-    Name varchar(255),
-    UsedFor varchar(255),
-    Quantity varchar(50),
-    Expiry_Date Date
-);
-
-CREATE TABLE BudgetTracker (
-    SrNo int AUTO_INCREMENT PRIMARY KEY,
-    Name varchar(255),
-    Quantity varchar(50),
-    TotalPrice decimal(7, 2)
-);
-
 -- Sample data for GroceryList table
 INSERT INTO GroceryList (Name, Quantity, Price) VALUES
 ('Milk', '1 gallon', 2),
@@ -75,29 +60,3 @@ INSERT INTO PantryInventory (Name, Type, Quantity, Expiry_Date) VALUES
 ('Dried Pasta', 'Pasta', '2 lbs', '2024-02-12'),
 ('Canned Tomatoes', 'Canned Goods', '4 cans', '2023-05-18'),
 ('Green Tea', 'Beverages', '1 box', '2023-10-30');
-
--- Sample data for MedicineInventory table
-INSERT INTO MedicineInventory (Name, UsedFor, Quantity, Expiry_Date) VALUES
-('Aspirin', 'Pain Relief', '1 box', '2023-07-15'),
-('Cough Syrup', 'Cough and Cold', '2 bottles', '2023-09-20'),
-('Antibiotics', 'Infections', '1 pack', '2023-11-10'),
-('Allergy Medication', 'Allergies', '1 box', '2023-08-25'),
-('Ibuprofen', 'Pain Relief', '1 bottle', '2023-06-30'),
-('Multivitamins', 'Supplements', '1 bottle', '2024-04-05'),
-('Band-Aids', 'First Aid', '1 box', '2023-12-15'),
-('Thermometer', 'Medical Equipment', '1 unit', NULL),
-('Cough Drops', 'Cough and Cold', '1 bag', '2023-10-10'),
-('Prescription Medication', 'Prescription', '2 bottles', '2023-11-30');
-
--- Sample data for BudgetTracker table
-INSERT INTO BudgetTracker (Name, Quantity, TotalPrice) VALUES
-('Groceries', 'Weekly', 150.75),
-('Eating Out', 'Monthly', 100.50),
-('Household Supplies', 'Monthly', 50.25),
-('Entertainment', 'Monthly', 75.00),
-('Utilities', 'Monthly', 120.00),
-('Personal Care', 'Monthly', 30.50),
-('Transportation', 'Monthly', 80.25),
-('Miscellaneous', 'Monthly', 40.00),
-('Healthcare', 'Monthly', 60.75),
-('Savings', 'Monthly', 200.00);

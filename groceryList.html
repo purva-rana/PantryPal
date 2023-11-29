@@ -4,17 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="grocery.js"></script>
-    <script src="initGrocery.js"></script>
     <link rel="stylesheet" href="grocery.css">
     <title>Grocery List</title>
+
+    
 </head>
 <body>
 
     <div class="sidenav">
-        <a href="#">Home</a>
+        <a href="index.html">Home</a>
         <a href="pantry_inventory.html">Pantry Inventory</a>
-        <a href="#">Medicine Inventory</a>
-        <a href="#">Budget Tracker</a>
         <a href="recipe.html">Recipe Storer</a>
     </div>
 
@@ -23,26 +22,61 @@
     
     <br><br>
 
-    <form>
+    <form action="php/insertIntoGrocery.php" method="post">
+
         <label for="itemName"></label>
-        <input type="text" name="itemName" id="itemName" placeholder="Name">
+        <input type="text" name="name" id="itemName" placeholder="Name">
         <label for="itemQuantity"></label>
-        <input type="text" name="itemQuantity" id="itemQuantity" placeholder="Quantity">
+        <input type="text" name="qty" id="itemQuantity" placeholder="Quantity">
         <label for="itemPrice"></label>
-        <input type="text" name="itemPrice" id="itemPrice" placeholder="Price">
+        <input type="text" name="price" id="itemPrice" placeholder="Price">
+        
+        <button type="submit" class="button-9">Add</button>
+        
+    </form>
+
+    <br>
+    
+    <form action="php/deleteFromGrocery.php" method="post">
+        
+        <label for="srno"></label>
+        <input type="text" name="inputID" id="srno" placeholder="Delete SrNo.:">
+        
+        <button type="submit" class="button-9">Delete</button>
+        
     </form>
     
-    <button class="button-9" onclick="addRow()">
-        Add item
-    </button>
+    <br><br>
+
+    <form action="php/updateInGrocery.php" method="post">
+        
+        <label for="itemName"></label>
+        <input type="text" name="name" id="itemName" placeholder="Name">
+        <label for="itemQuantity"></label>
+        <input type="text" name="qty" id="itemQuantity" placeholder="Quantity">
+        <label for="itemPrice"></label>
+        <input type="text" name="price" id="itemPrice" placeholder="Price">
+        <label for="srno"></label>
+        <input type="text" name="inputID" id="srno" placeholder="Update SrNo.:">
+        
+        <button type="submit" class="button-9">Update</button>
+        
+    </form>
+    
+    <br>
 
     <table class="center styled-table" id = "groceryTable">
         <tr>
-            <th width = "50px"> <button class = "headerButtons" onclick="sortTable_String('groceryTable', 0)">S.No.</button></th>
-            <th width = "150px"><button class = "headerButtons" onclick="sortTable_String('groceryTable', 1)">Name</button></th>
-            <th width = "75px"> <button class = "headerButtons" onclick="sortTable_Numbers('groceryTable', 2)">Quantity</button></th>
-            <th width = "100px"><button class = "headerButtons" onclick="sortTable_Numbers('groceryTable', 3)">Price</button></th>
-            <th width = "25px"> <button class = "headerButtons"></button>
+            <th width = "50px"> 
+                <button class = "headerButtons" onclick="sortTable_String('groceryTable', 0)">S.No.</button></th>
+            <th width = "150px">
+                <button class = "headerButtons" onclick="sortTable_String('groceryTable', 1)">Name</button></th>
+            <th width = "75px"> 
+                <button class = "headerButtons" onclick="sortTable_Numbers('groceryTable', 2)">Quantity</button></th>
+            <th width = "100px">
+                <button class = "headerButtons" onclick="sortTable_Numbers('groceryTable', 3)">Price</button></th>
+            <th width = "25px"> 
+                <button class = "headerButtons"></button></th>
         </tr>
       
     </table>
