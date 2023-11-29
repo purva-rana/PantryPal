@@ -19,7 +19,7 @@ CREATE TABLE PantryInventory (
     Name varchar(255),
     Type varchar(255),
     Quantity varchar(50),
-    Expiry_Date Date
+    Expiry_Date varchar(50)
 );
 
 -- Sample data for GroceryList table

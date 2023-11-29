@@ -5,18 +5,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pantry Inventory</title>
     <div class="sidenav">
-            <a href="index.html">Home</a>
-            <a href="groceryList.html">Grocery List</a>
-            <a href="recipe.html">Recipe Storer</a>
+        <a href="index.html">Home</a>
+        <a href="groceryList.html">Grocery List</a>
+        <a href="#">Pantry Inventory</a>
     </div>
     <link rel="stylesheet" href="sideNav.css">
+    <link rel="stylesheet" href="grocery.css">
+    <script src="pantryInvJS.js"></script>
     </head>
 <body>
-    <link rel="stylesheet" href="pantryInvBody.css">
 
-  <h2>Pantry Items</h2>
+  <h1 align="center">Pantry Inventory</h1>
+  <hr> <br><br>
+  <br><br>
 
-  <table border="1" id="pantryTable">
+  
+<form id="myForm" autocomplete="off" action="php/insertIntoInventory.php" method="post">
+
+    <label for="itemName"></label>
+    <input type="text" id="itemName" name="name" placeholder="Name">
+    
+    <label for="type"></label>
+    <input type="text" id="foodType" name="type" placeholder="Type">
+    
+    <label for="quantity"></label>
+    <input type="text" id="quantity" name="qty" placeholder="Quantity">
+    
+    <label for="expiryDate"></label>
+    <input type="text" id="expiryDate" name="date" placeholder="Expiry Date">
+    
+    <button type="submit" class="button-9" onclick="addItem()">Add Item</button>
+
+</form>
+
+<br><br><br>
+
+<form action="php/deleteFromInventory.php" method="post">
+    
+    <label for="srno"></label>
+    <input type="text" name="inputID" id="srno" placeholder="Delete SrNo.:">
+    
+    <button type="submit" class="button-9">Delete</button>
+    
+</form>
+
+<br><br><br>
+
+<form action="php/updateInInventory.php" method="post">
+    
+    <label for="itemName"></label>
+    <input type="text" name="name" id="itemName" placeholder="Name">
+
+    <label for="itemType"></label>
+    <input type="text" name="type" id="itemType" placeholder="Type">
+    
+    <label for="expiryDate"></label>
+    <input type="text" name="qty" id="itemQuantity" placeholder="Quantity">
+    
+    <label for="itemQuantity"></label>
+    <input type="text" name="Date" id="expiryDate" placeholder="Expiry Date">
+
+    <label for="srno"></label>
+    <input type="text" name="inputID" id="srno" placeholder="Update SrNo.:">
+
+    <button type="submit" class="button-9">Update</button>
+  
+</form>
+  
+  
+  
+  
+  
+  
+
+  <br><br><br><br><br>
+  
+  <table border="1" id="pantryTable" class="center">
     <tr>
         <th>Sr No.</th>
         <th>Item name</th>
@@ -26,17 +90,6 @@
         <th>Action</th>
     </tr>
   </table>
-  <form id="myForm" autocomplete="off">
-    <label for="itemName">Item Name:</label>
-    <input type="text" id="itemName" name="itemName">
-    <label for="quantity">Quantity:</label>
-    <input type="text" id="quantity" name="quantity">
-    <label for="expiryDate">Expiry Date:</label>
-    <input type="text" id="expiryDate" name="expiryDate">
-    <button type="button" onclick="addItem()">Add Item</button>
-  </form>
-
-    <script src="pantryInvJS.js"></script>
 
 </body>
 </html>

@@ -12,7 +12,7 @@
     else {
         $conn->set_charset("utf8mb4");
 
-        $stmt = $conn->prepare("DELETE FROM GroceryList WHERE SrNo = ?");
+        $stmt = $conn->prepare("DELETE FROM PantryInventory WHERE SrNo = ?");
 		$stmt->bind_param("i", $id);
         echo $stmt->sqlstate . ": " . $stmt->error;
         $execVal = $stmt->execute();
