@@ -14,10 +14,10 @@
     <div class="sidenav">
         <a href="index.html">Home</a>
         <a href="#">Grocery List</a>
-        <a href="pantry_inventory.html">Pantry Inventory</a>
+        <a href="pantry_inventory.php">Pantry Inventory</a>
     </div>
 
-    <h1 align = "center">Grocery List</h1>W
+    <h1 align = "center">Grocery List</h1>
     <hr> <br><br>
     
     <br><br>
@@ -75,9 +75,44 @@
                 <button class = "headerButtons" onclick="sortTable_Numbers('groceryTable', 2)">Quantity</button></th>
             <th width = "100px">
                 <button class = "headerButtons" onclick="sortTable_Numbers('groceryTable', 3)">Price</button></th>
-            <th width = "25px"> 
-                <button class = "headerButtons"></button></th>
         </tr>
+
+        <?php
+            // Database connection
+            $conn = new mysqli('localhost', 'root', '', 'pantrypal');
+
+            // Check connection
+            if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+            }
+
+            // Fetch records from the database
+            $sql = "SELECT * FROM GroceryList";
+            $result = $conn->query($sql);
+
+            // Close the connection
+            $conn->close();
+
+            // Check if there are records
+            if ($result->num_rows > 0) {
+                    
+                // Output data of each row
+                while ($row = $result->fetch_assoc()) {
+                    
+                    echo '<tr>';
+                        echo '<td>' . $row['SrNo'] . '</td>';
+                        echo '<td>' . $row['Name'] . '</td>';
+                        echo '<td>' . $row['Quantity'] . '</td>';
+                        echo '<td>' . $row['Price'] . '</td>';
+                        echo '</tr>';
+                    }
+                    
+                    echo '</table>';
+                } else {
+                    echo "No records found";
+                }
+        ?>
+        
       
     </table>
 

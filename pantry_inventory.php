@@ -6,7 +6,7 @@
     <title>Pantry Inventory</title>
     <div class="sidenav">
         <a href="index.html">Home</a>
-        <a href="groceryList.html">Grocery List</a>
+        <a href="groceryList.php">Grocery List</a>
         <a href="#">Pantry Inventory</a>
     </div>
     <link rel="stylesheet" href="sideNav.css">
@@ -87,8 +87,49 @@
         <th>Item type</th>
         <th>Quantity</th>
         <th>Expiry Date</th>
-        <th>Action</th>
     </tr>
+
+    <?php
+        // Database connection
+        $conn = new mysqli('localhost', 'root', '', 'pantrypal');
+
+        // Check connection
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+
+        // Fetch records from the database
+        $sql = "SELECT * FROM PantryInventory";
+        $result = $conn->query($sql);
+
+        // Close the connection
+        $conn->close();
+
+        // Check if there are records
+        if ($result->num_rows > 0) {
+                
+                // Output data of each row
+                while ($row = $result->fetch_assoc()) {
+                    
+                    echo '<tr>';
+                        echo '<td>' . $row['SrNo'] . '</td>';
+                        echo '<td>' . $row['Name'] . '</td>';
+                        echo '<td>' . $row['Type'] . '</td>';
+                        echo '<td>' . $row['Quantity'] . '</td>';
+                        echo '<td>' . $row['Expiry_Date'] . '</td>';
+                        echo '</tr>';
+                    }
+                    
+                    echo '</table>';
+                } else {
+                    echo "No records found";
+                }
+        
+        ?>
+    
+    
+    
+    
   </table>
 
 </body>
